@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example3-containers
+spec:
+  selector:
+    matchLabels:
+      app: example3-containers
+  template:
+    metadata:
+      labels:
+        app: example3-containers
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          resources:
+            limits:
+              memory: "64Mi"
+              cpu: "100m"
+          ports:
+            - containerPort: 80
+        - name: busybox
+          image: busybox
+          resources:
+            limits:
+              memory: "64Mi"
+              cpu: "100m"
