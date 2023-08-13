@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example2-slow-booting
+spec:
+  selector:
+    matchLabels:
+      app: example2-slow-booting
+  template:
+    metadata:
+      labels:
+        app: example2-slow-booting
+    spec:
+      containers:
+      - name: example2-slow-booting
+        image: localtest:v1
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "200m"

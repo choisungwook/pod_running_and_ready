@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example4-invalid-both
+  labels:
+    name: example4-invalid-both
+spec:
+  containers:
+  - name: invalid-0
+    image: this-is-not-working
+    resources:
+      limits:
+        memory: "64Mi"
+        cpu: "100m"
+  - name: invalid-1
+    image: this-is-not-working
+    resources:
+      limits:
+        memory: "64Mi"
+        cpu: "100m"
